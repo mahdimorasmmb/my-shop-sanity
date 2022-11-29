@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import Header from "../components/Header";
 
 const data = {
   metaData: {
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
         <meta name="description" content={data.metaData.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <h1> hi new Project </h1>
     </>
   );
