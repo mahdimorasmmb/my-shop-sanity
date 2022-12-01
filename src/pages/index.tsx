@@ -1,8 +1,8 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import Header from "../components/Header";
-import Landing from "../components/Landing/Landing";
+import Landing from "../components/page-components/Landing/Landing";
+import Header from "../components/page-components/layout/Header";
 
 const data = {
   metaData: {

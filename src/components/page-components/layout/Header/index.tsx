@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import NavList from "./NavList";
+
 import { SearchIcon } from "@heroicons/react/outline";
 import ShoppingBag from "./NabBar/ShoppingBag";
-import RightNav from "./NabBar/RightNav";
 import Profile from "./NabBar/Profile";
+import NavList from "./NabBar/NavList";
+import RightNav from "./NabBar/RightNav";
 
 const navList = [
   { text: "Product", href: "" },
