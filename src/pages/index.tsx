@@ -1,4 +1,4 @@
-import { type NextPage } from "next";
+import { GetServerSideProps, type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Landing from "../components/page-components/Landing/Landing";
@@ -58,3 +58,9 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    props: {},
+  };
+};
