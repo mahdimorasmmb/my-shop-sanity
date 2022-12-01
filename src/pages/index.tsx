@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Header from "../components/Header";
+import Landing from "../components/Landing/Landing";
 
 const data = {
   metaData: {
@@ -19,7 +20,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <h1> hi new Project </h1>
+      <main className="relative h-[200vh] bg-[#E7ECEE]">
+        <Landing />
+      </main>
     </>
   );
 };

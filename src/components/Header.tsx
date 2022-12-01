@@ -5,6 +5,7 @@ import NavList from "./NavList";
 import { SearchIcon } from "@heroicons/react/outline";
 import ShoppingBag from "./NabBar/ShoppingBag";
 import RightNav from "./NabBar/RightNav";
+import Profile from "./NabBar/Profile";
 
 const navList = [
   { text: "Product", href: "" },
@@ -15,17 +16,22 @@ const navList = [
 
 const rightList = [
   {
-    Component: <SearchIcon className="h-5 w-5" />,
+    Component: (
+      <SearchIcon className="h-5 w-5 cursor-pointer opacity-75 transition hover:opacity-100 " />
+    ),
   },
   {
     Component: <ShoppingBag />,
     href: "/checkout",
   },
+  {
+    Component: <Profile />,
+  },
 ];
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-30 flex w-full items-center bg-[#E7EcEE] p-4 ">
+    <header className="sticky top-0 z-30 flex w-full items-center justify-between bg-[#E7EcEE] p-4 ">
       <div className="flex  items-center justify-center md:w-1/5">
         <Link href="/">
           <Image
