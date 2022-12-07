@@ -19,7 +19,7 @@ const Tab = ({ tabs }: Props) => {
   ) => (activeIndex === index ? activeClass : deactiveClass);
   return (
     <div className="">
-      <div className="tabs">
+      <div className="tabs flex justify-center">
         {tabs.map((item, index) => (
           <button
             className={`tab  tab-lifted ${checkActive(
@@ -34,7 +34,7 @@ const Tab = ({ tabs }: Props) => {
           </button>
         ))}
       </div>
-      <div>{tabs[activeIndex]?.children}</div>
+      <div className="mt-20">{tabs[activeIndex]?.children}</div>
     </div>
   );
 };

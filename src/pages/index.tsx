@@ -29,9 +29,13 @@ const Home = ({ categories, products }: Props) => {
     );
     return {
       title: category.title,
-      children: tabProducts.map((product) => (
-        <Product key={product._id} product={product} />
-      )),
+      children: (
+        <div className="grid  grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-3 ">
+          {tabProducts.map((product) => (
+            <Product key={product._id} product={product} />
+          ))}
+        </div>
+      ),
     };
   });
   console.log(products);
@@ -52,7 +56,7 @@ const Home = ({ categories, products }: Props) => {
           <h1 className="text-center text-4xl font-medium tracking-wide text-white md:text-5xl">
             New Promos
           </h1>
-          <div className="flex justify-center ">
+          <div className="mx-auto flex max-w-fit justify-center pt-10 pb-24 sm:px-4  ">
             <Tab tabs={tabTitle} />
           </div>
         </div>
