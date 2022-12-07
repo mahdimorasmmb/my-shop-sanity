@@ -3,7 +3,15 @@ import Head from "next/head";
 import Link from "next/link";
 import Landing from "../components/page-components/Landing/Landing";
 import Header from "../components/page-components/layout/Header";
+import Product from "../components/widgets/Product";
 import Tab from "../components/widgets/Tab";
+import { fetchCategories } from "../utils/fetchCategories";
+import { fetchProducts } from "../utils/fetchProducts";
+
+interface Props {
+  categories: Category[];
+  products: Product[];
+}
 
 const data = {
   metaData: {
@@ -12,7 +20,22 @@ const data = {
   },
 };
 
-const Home: NextPage = () => {
+const Home = ({ categories, products }: Props) => {
+  console.log(categories);
+
+  const tabTitle = categories.map((category) => {
+    const tabProducts = products.filter(
+      (product) => product.category._ref === category._id
+    );
+    return {
+      title: category.title,
+      children: tabProducts.map((product) => (
+        <Product key={product._id} product={product} />
+      )),
+    };
+  });
+  console.log(products);
+
   return (
     <>
       <Head>
@@ -30,26 +53,7 @@ const Home: NextPage = () => {
             New Promos
           </h1>
           <div className="flex justify-center ">
-            <Tab
-              tabs={[
-                {
-                  children: (
-                    <>
-                      <h1 className="text-red-600">hi mahdi</h1>
-                    </>
-                  ),
-                  text: "Hi",
-                },
-                {
-                  children: (
-                    <>
-                      <h1 className="text-red-600">hi amir</h1>
-                    </>
-                  ),
-                  text: "Hello",
-                },
-              ]}
-            />
+            <Tab tabs={tabTitle} />
           </div>
         </div>
       </section>
@@ -59,8 +63,13 @@ const Home: NextPage = () => {
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const categories = await fetchCategories();
+  const products = await fetchProducts();
   return {
-    props: {},
+    props: {
+      categories,
+      products,
+    },
   };
 };

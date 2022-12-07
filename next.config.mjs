@@ -14,7 +14,7 @@ const config = {
     defaultLocale: "en",
   },
   images: {
-    domains: ["rb.gy"],
+    domains: ["rb.gy",'cdn.sanity.io'],
   },
 };
 export default config;

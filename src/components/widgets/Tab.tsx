@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 interface Tabs {
-  text: string;
+  title: React.ReactNode;
   children: React.ReactNode;
 }
 
@@ -12,18 +12,25 @@ interface Props {
 const Tab = ({ tabs }: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const handleClick = (index: number) => setActiveIndex(index);
-  const checkActive = (index: number, className: string) =>
-    activeIndex === index ? className : "";
+  const checkActive = (
+    index: number,
+    activeClass: string,
+    deactiveClass: string
+  ) => (activeIndex === index ? activeClass : deactiveClass);
   return (
     <div className="">
       <div className="tabs">
         {tabs.map((item, index) => (
           <button
-            className={`tab tab-lifted ${checkActive(index, "tab-active")}`}
+            className={`tab  tab-lifted ${checkActive(
+              index,
+              " borderGradient border-[#35383C]  bg-[#35383C] text-white",
+              " border-b-2 border-[#35383C] text-[#747474]"
+            )} `}
             onClick={() => handleClick(index)}
-            key={item.text}
+            key={item.title?.toString()}
           >
-            {item.text}
+            {item.title}
           </button>
         ))}
       </div>
