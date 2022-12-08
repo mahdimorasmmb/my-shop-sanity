@@ -47,7 +47,6 @@ const Home = ({ categories, products }: Props) => {
         <meta name="description" content={data.metaData.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <main className="relative h-[200vh] bg-[#E7ECEE]">
         <Landing />
       </main>

@@ -7,6 +7,7 @@ import ShoppingBag from "./NabBar/ShoppingBag";
 import Profile from "./NabBar/Profile";
 import NavList from "./NabBar/NavList";
 import RightNav from "./NabBar/RightNav";
+import Basket from "../../../widgets/Basket";
 
 const navList = [
   { text: "Product", href: "" },
@@ -22,7 +23,7 @@ const rightList = [
     ),
   },
   {
-    Component: <ShoppingBag />,
+    Component: <Basket />,
     href: "/checkout",
   },
   {
