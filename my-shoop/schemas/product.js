@@ -40,6 +40,12 @@ export default {
       title: "Price",
       type: "number",
     },
+   
+    {
+      name: "stock",
+      title: "Stock",
+      type: "number",
+    },
     {
       name: "description",
       title: "Description",
@@ -47,3 +53,5 @@ export default {
     },
   ],
 };
+
+
