@@ -28,6 +28,7 @@ interface Product {
     _type: 'product'
     title: string
     price: number
+    stock: number
     slug: {
         _type: "slug"
         current: string

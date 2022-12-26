@@ -8,6 +8,7 @@ import { store } from "../redux/store";
 import Basket from "../components/widgets/Basket";
 import { ToastContainer } from "react-toastify";
 import { Layout } from "../components/page-components/layout";
+import "react-toastify/dist/ReactToastify.css";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
